@@ -19,7 +19,8 @@ module GrassGraph
     def initialize
       self.dropbox = OpenStruct.new(enabled: false, access_token: "", path: "")
       self.s3 = OpenStruct.new(enabled: false, access_key: "",
-        secret_access_key: "", bucket_name: "", path: "", acl: "")
+        secret_access_key: "", region: "ap-northeast-1",
+        bucket_name: "", path: "", acl: "")
     end
 
     def empty_check(*configs)

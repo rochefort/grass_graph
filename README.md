@@ -33,10 +33,12 @@ GrassGraph.configure do |config|
 
   # AWS S3 settings
   # enabled: default false
+  # region: default ap-northeast-1
   # acl: accepts private, public-read, public-read-write, authenticated-read
   config.s3.enabled = true
   config.s3.access_key_id = "YOUR_AWS_ACCESS_ID"
   config.s3.secret_access_key = "YOUR_AWS_SECRET_ACCESS_KEY"
+  config.s3.region = "ap-northeast-1"
   config.s3.bucket_name = "YOUR_BUCKET_NAME"
   config.s3.path = "grass-graph.png"
   config.s3.acl = "public-read"
