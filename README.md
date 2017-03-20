@@ -1,36 +1,52 @@
-# GrassGraph
+# grass_graph
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/grass_graph`. To experiment with that code, run `bin/console` for an interactive prompt.
+Save a PNG image of the specified GitHub grass-graph and upload s3 and dropbox.
 
-TODO: Delete this and the text above, and describe your gem
+
+## Requirements
+- Ruby 2.0+
+- Imagemagick
+- Ghostscript
+
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'grass_graph'
+```sh
+git clone https://github.com/rochefort/grass_graph
+cd grass_graph
+bundle install
+bundle exec rake install
 ```
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install grass_graph
-
 ## Usage
+```ruby
+require "grass_graph"
 
-TODO: Write usage instructions here
+GrassGraph.configure do |config|
+  config.github_id = "rochefort"
+  config.png_path = "work/grass-graph.png"
 
-## Development
+  # Dropbox settings
+  # enabled: default false
+  config.dropbox.enabled = true
+  config.dropbox.access_token = "YOUR_DROPBOX_ACCESS_TOKEN"
+  config.dropbox.path = "/grass-graph.png"
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+  # AWS S3 settings
+  # enabled: default false
+  # acl: accepts private, public-read, public-read-write, authenticated-read
+  config.s3.enabled = true
+  config.s3.access_key_id = "YOUR_AWS_ACCESS_ID"
+  config.s3.secret_access_key = "YOUR_AWS_SECRET_ACCESS_KEY"
+  config.s3.bucket_name = "YOUR_BUCKET_NAME"
+  config.s3.path = "grass-graph.png"
+  config.s3.acl = "public-read"
+end
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+GrassGraph.save_png
+```
+
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/grass_graph.
+Bug reports and pull requests are welcome on GitHub at https://github.com/rochefort/grass_graph.
 
