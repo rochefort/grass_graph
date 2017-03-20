@@ -23,7 +23,7 @@ require "grass_graph"
 
 GrassGraph.configure do |config|
   config.github_id = "rochefort"
-  config.png_path = "work/grass-graph.png"
+  config.png_path = "grass-graph.png"
 
   # Dropbox settings
   # enabled: default false
