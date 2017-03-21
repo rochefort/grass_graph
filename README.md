@@ -1,6 +1,6 @@
 # grass_graph
 
-Save a PNG image of the specified GitHub grass-graph and upload s3 and dropbox.  
+Save a PNG image of the specified GitHub grass-graph and upload it to s3 and dropbox.  
 
 I inspired this web service:  
 [Grass-Graph / Imaging your GitHub Contributions Graph](https://grass-graph.shitemil.works/)

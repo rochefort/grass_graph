@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["rochefort"]
   spec.email         = ["terasawan@gmail.com"]
 
-  spec.summary       = "Save your github grass-graph as png"
+  spec.summary       = "Save a PNG image of the specified GitHub grass-graph and upload it to s3 and dropbox"
   spec.description   = spec.summary
   spec.homepage      = "https://github.com/rochefort/grass_graph"
 
