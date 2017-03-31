@@ -19,6 +19,7 @@ module GrassGraph::Store
       obj = s3.bucket(@base_info.bucket_name).object(@base_info.path)
       opts = {}
       opts[:acl] = @base_info.acl unless @base_info.acl.to_s.empty?
+      opts[:cache_control] = @base_info.cache_control unless @base_info.cache_control.to_s.empty?
       obj.upload_file(@config.png_path, opts)
     end
   end

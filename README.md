@@ -38,6 +38,7 @@ GrassGraph.configure do |config|
   # enabled: default false
   # region: default ap-northeast-1
   # acl: accepts private, public-read, public-read-write, authenticated-read
+  # cache_control: optional
   config.s3.enabled = true
   config.s3.access_key_id = "YOUR_AWS_ACCESS_ID"
   config.s3.secret_access_key = "YOUR_AWS_SECRET_ACCESS_KEY"
@@ -45,6 +46,7 @@ GrassGraph.configure do |config|
   config.s3.bucket_name = "YOUR_BUCKET_NAME"
   config.s3.path = "grass-graph.png"
   config.s3.acl = "public-read"
+  config.s3.cache_control = "max-age=86400"
 end
 
 GrassGraph.save_png
